@@ -38,7 +38,10 @@
 
 ## Execution
 
-### Datasets Folder  [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/datasets)
+#### Project Work Flow
+![Alt text](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/blob/main/Project_workflow.jpeg?raw=true "Project Flow Daigram")
+
+#### Datasets Folder  [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/datasets)
 
 * The place where daily data comes in and there are some sub folders which is used for testing while coding dev
 
