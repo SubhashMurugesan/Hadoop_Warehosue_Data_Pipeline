@@ -1,0 +1,133 @@
+nohup hive --service metastore &
+
+set hive.cli.print.current.db=true;
+set hive.cli.print.header=true;
+
+create database project_2;
+drop table SCD02_Shoop_Data;
+use project_2;
+
+create table SCD02_Shoop_Data(
+custid int,
+username varchar(30),
+quote_count varchar(20),
+ip varchar(50),
+entry_time varchar(40),
+prp_1 int,
+prp_2 int,
+prp_3 int,
+ms  varchar(5),
+http_type varchar(5),
+purchase_category varchar(50),
+total_count int,
+purchase_sub_category  varchar(50),  
+http_info text,
+status_code  int,
+record_in_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+modified_date  TIMESTAMP DEFAULT '2014-01-11',
+latest_status varchar(10) default 'Insert'
+);
+
+select * from SCD02_Shoop_Data;
+
+
+
+sqoop import \
+--connect jdbc:mysql://localhost:3306/project_2?useSSL=False \
+--username root --password Welcome@123 \
+--query 'SELECT * from SCD02_Shoop_Data  WHERE $CONDITIONS' \
+--split-by custid \
+--target-dir /user/saif/HFS/Output/Project_1/SCD02/imp_data
+
+#checking the direcotry
+hdfs dfs -ls /user/saif/HFS/Output/Project_1/SCD02/imp_data
+#removing the direcotry
+hdfs dfs -rm -r /user/saif/HFS/Output/Project_1/SCD02/ -------------removing the direcotry
+
+create table  if not exists scd02_mang_tbl_cust
+(
+custid int,
+username string,
+quote_count string,
+ip string,
+entry_time string,
+prp_1 string,
+prp_2 string,
+prp_3 string,
+ms string,
+http_type string,
+purchase_category string,
+total_count string,
+purchase_sub_category string,
+http_info string,
+status_code int,
+record_in_date string,
+modified_date string,
+latest_status string
+)
+row format delimited fields terminated by ',';
+
+----truncate required
+load data inpath '/user/saif/HFS/Output/Project_1/SCD02/imp_data' into table test_mang_tbl_cust;
+
+
+create table  if not exists scd02_mang_tbl_cust
+(
+custid int,
+username string,
+quote_count string,
+ip string,
+entry_time string,
+prp_1 string,
+prp_2 string,
+prp_3 string,
+ms string,
+http_type string,
+purchase_category string,
+total_count string,
+purchase_sub_category string,
+http_info string,
+status_code int,
+record_in_date string,
+modified_date string,
+latest_status string
+)
+row format delimited fields terminated by ',';
+
+
+----truncate required
+load data inpath '/user/saif/HFS/Output/Project_1/SCD02/imp_data' into table 
+scd02_mang_tbl_cust;
+
+
+hdfs dfs -ls /user/hive/warehouse/project_1.db/scd02_mang_tbl_cust
+
+
+
+create table if not exists Project_1.scd02_cust_stagging(
+custid int,
+username string,
+quote_count string,
+ip string,
+entry_time string,
+prp_1 string,
+prp_2 string,
+prp_3 string,
+ms string,
+http_type string,
+purchase_category string,
+total_count string,
+purchase_sub_category string,
+http_info string,
+status_code int,
+record_in_date string,
+latest_status string,
+day int,
+year string,
+month string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+
+
+
+
