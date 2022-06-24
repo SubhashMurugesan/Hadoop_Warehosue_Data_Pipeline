@@ -38,17 +38,17 @@
 
 ## Execution
 
-#### Datasets Folder  [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/datasets)
+### Datasets Folder  [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/datasets)
 
 * The place where daily data comes in and there are some sub folders which is used for testing while coding dev
 
-### Scripts [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/scripts)
+#### Scripts [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/scripts)
 
 * Entire automation is done here, you can find the entire logic here and intermediate files generated
 
-### Env [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/env)
+#### Env [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/env)
 
 * Support files required for the Script file are kept under this directory
 
-### Reference File [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/ref_files)
+#### Reference File [here](https://github.com/SubhashMurugesan/Hadoop_Warehosue_Data_Pipeline/tree/main/ref_files)
 * Under this direcotry you can find the details regarding the column description at schema level 
