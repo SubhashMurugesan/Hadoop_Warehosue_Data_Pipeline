@@ -2,13 +2,13 @@
 
 ## Client Requirement 
 
-* Daily a file will be coming from the client side of customer purchase data
+* Daily a file will be coming from the client side about the customer purchase data of file type CSV
 
-* The will be new records every day and there might also be old records that need to be updated
+* There will be new records every day and there might also be old records that need to be updated
 
 * Client requires SCD TYPE 01 logic to be in  the warehouse 
 
-* Also the records end the processing need to be reconciled 
+* Also at end of the processing of each day there data  need to be reconciled 
 
 ## Data ingestion 
 
