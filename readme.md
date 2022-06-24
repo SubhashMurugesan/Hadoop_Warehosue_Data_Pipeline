@@ -1,4 +1,4 @@
-# Date Warehousing Pipeline of Type 01 Logic 
+# Date Warehousing Pipeline of SCD Type 01 Logic 
 
 ## Client Requirement 
 
