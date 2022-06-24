@@ -34,7 +34,7 @@
 
 * Entire warehousing solution is automated using bash scripts
 
-* All credentails,output direotries, DBMS details are made dynamic using parmeter file and crednetial files
+* All credentails,output direotries, DBMS details are made dynamic using parmeter file and credential files
 
 ## Execution
 
