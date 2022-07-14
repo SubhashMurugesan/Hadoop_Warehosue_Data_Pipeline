@@ -1,14 +1,14 @@
-# Date Warehousing Pipeline of SCD Type 01 Logic 
+# Loading Online Event Hits using Sqoop to Hive via Shell Script
 
 ## Client Requirement 
 
-* Daily a file will be coming from the client side about the customer purchase data of file type CSV
+* Daily a file will be coming from the client side about the customer hit data of file type CSV
 
 * There will be new records every day and there might also be old records that need to be updated
 
 * Client requires SCD TYPE 01 logic to be in  the warehouse 
 
-* Also at end of the processing of each day there data  need to be reconciled 
+* Also at end of the processing of each day ,there data need to be reconciled 
 
 ## Data ingestion 
 
@@ -34,7 +34,7 @@
 
 * Entire warehousing solution is automated using bash scripts
 
-* All credentails,output direotries, DBMS details are made dynamic using parmeter file and credential files
+* All credentails,output directories,DBMS details are made dynamic using parmeter file and credential files
 
 ## Execution
 
